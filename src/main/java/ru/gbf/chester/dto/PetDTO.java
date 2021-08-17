@@ -1,4 +1,4 @@
-package ru.gbf.chester.entity;
+package ru.gbf.chester.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,16 +10,10 @@ import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
-@Table("pet")
-public class Pet {
-    @Id
+public class PetDTO {
     private Long id;
     private String name;
     private String breed;
     private Double age;
     private Long category;
-
-    @Column("create_owner_id")
-    private Long ownerId;
-    private LocalDateTime createDt;
 }

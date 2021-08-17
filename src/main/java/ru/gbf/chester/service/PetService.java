@@ -41,4 +41,8 @@ public class PetService {
     public List<Pet> getCategory(Long category) {
         return petRepository.findAllByCategoryEquals(category);
     }
+
+    public void deleteById(Long id) {
+        petRepository.deleteById(id);
+    }
 }

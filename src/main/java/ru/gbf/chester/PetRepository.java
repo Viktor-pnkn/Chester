@@ -11,7 +11,8 @@ import java.util.List;
  */
 public interface PetRepository extends CrudRepository<Pet,Long> {
 
-    @Query("select p.id, p.name, p.breed, p.age, p.category from pet p where p.age > :age")
+    @Query("select p.id, p.name, p.breed, p.age, p.category, p.create_owner_id, " +
+            "p.create_dt from pet p where p.age > :age")
     List<Pet> getWhereAgeIsHigher(double age);
 
     List<Pet> findAllByCategoryEquals(Long category);
