@@ -13,7 +13,7 @@ public class PetMapper {
                 petDTO.getBreed(),
                 petDTO.getAge(),
                 petDTO.getCategory(),
-                null, null
+                petDTO.getOwner_id()
         );
     }
 
@@ -23,7 +23,8 @@ public class PetMapper {
                 pet.getName(),
                 pet.getBreed(),
                 pet.getAge(),
-                pet.getCategory()
+                pet.getCategory(),
+                pet.getOwnerId()
         );
     }
 }

@@ -16,4 +16,5 @@ public class PetDTO {
     private String breed;
     private Double age;
     private Long category;
+    private Long owner_id;
 }
