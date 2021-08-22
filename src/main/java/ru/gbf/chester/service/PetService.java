@@ -45,4 +45,8 @@ public class PetService {
     public void deleteById(Long id) {
         petRepository.deleteById(id);
     }
+
+    public List<Pet> getPets(Long owner_id) {
+        return petRepository.getPets(owner_id);
+    }
 }

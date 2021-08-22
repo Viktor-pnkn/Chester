@@ -8,8 +8,4 @@ import ru.gbf.chester.entity.User;
 import java.util.List;
 
 public interface SalonRepository extends PagingAndSortingRepository<Salon, Long> {
-
-    @Query("select u.id, u.type, u.name, u.email, u.phone, u.salon_id from users u " +
-    "where u.salon_id = :salon_id")
-    List<User> getGroomers(Long salon_id);
 }

@@ -11,5 +11,5 @@ public class UserDTO {
     private String name;
     private String email;
     private String phone;
-    private Long salon_id;
+    private Long salonId;
 }

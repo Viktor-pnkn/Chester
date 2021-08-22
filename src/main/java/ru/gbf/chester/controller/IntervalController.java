@@ -19,7 +19,7 @@ public class IntervalController {
     private final IntervalMapper intervalMapper;
 
     @PostMapping
-    public IntervalDTO create(@RequestBody Interval interval) {
-        return intervalMapper.toDTO(intervalService.save(interval));
+    public IntervalDTO create(@RequestBody IntervalDTO interval) {
+        return intervalMapper.toDTO(intervalService.save(intervalMapper.toEntity(interval)));
     }
 }

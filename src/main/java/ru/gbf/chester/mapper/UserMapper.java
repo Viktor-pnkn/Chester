@@ -13,7 +13,7 @@ public class UserMapper {
                 userDTO.getName(),
                 userDTO.getEmail(),
                 userDTO.getPhone(),
-                userDTO.getSalon_id()
+                userDTO.getSalonId()
         );
     }
 
@@ -24,7 +24,7 @@ public class UserMapper {
                 user.getName(),
                 user.getEmail(),
                 user.getPhone(),
-                user.getSalon_id()
+                user.getSalonId()
         );
     }
 }

@@ -10,10 +10,7 @@ import java.util.List;
 
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
-    @Query("select p.id, p.name, p.breed, p.age, p.category, p.owner_id " +
-    "from pets p where p.owner_id = :owner_id")
-    List<Pet> getPets(Long owner_id);
-
-    @Query("select i.start_time, i.end_time from intervals i where i.groomer_id = :groomer_id")
-    List<Interval> getIntervals(Long groomer_id);
+    @Query("select u.id, u.type, u.name, u.email, u.phone, u.salon_id from users u " +
+            "where u.type = 'G' and u.salon_id = :salonId")
+    List<User> getGroomers(Long salonId);
 }

@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 public class Interval {
     @Id
     private Long id;
-    private LocalDateTime start_time;
-    private LocalDateTime end_time;
-    private Long groomer_id;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
+    private Long groomerId;
+    private Long procedureId;
 }

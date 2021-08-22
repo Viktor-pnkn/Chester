@@ -17,4 +17,8 @@ public interface PetRepository extends PagingAndSortingRepository<Pet,Long> {
     List<Pet> getWhereAgeIsHigher(double age);
 
     List<Pet> findAllByCategoryEquals(Long category);
+
+    @Query("select p.id, p.name, p.breed, p.age, p.category, p.owner_id " +
+            "from pets p where p.owner_id = :ownerId")
+    List<Pet> getPets(Long ownerId);
 }

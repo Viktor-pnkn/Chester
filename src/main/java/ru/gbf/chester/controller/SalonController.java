@@ -8,6 +8,7 @@ import ru.gbf.chester.entity.Salon;
 import ru.gbf.chester.mapper.SalonMapper;
 import ru.gbf.chester.mapper.UserMapper;
 import ru.gbf.chester.service.SalonService;
+import ru.gbf.chester.service.UserService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +19,6 @@ import java.util.stream.Collectors;
 public class SalonController {
     private final SalonService salonService;
     private final SalonMapper salonMapper;
-    private final UserMapper userMapper;
 
     @PostMapping
     public SalonDTO create(@RequestBody SalonDTO salonDTO) {
@@ -30,8 +30,6 @@ public class SalonController {
      */
     @GetMapping("/getGroomers")
     public List<UserDTO> getGroomers(@RequestParam("id") Long id) {
-        return salonService.getGroomers(id).stream()
-                .map(userMapper::toDTO)
-                .collect(Collectors.toList());
+        return salonService.getGroomers(id);
     }
 }
