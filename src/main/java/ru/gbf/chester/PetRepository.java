@@ -20,5 +20,5 @@ public interface PetRepository extends PagingAndSortingRepository<Pet,Long> {
 
     @Query("select p.id, p.name, p.breed, p.age, p.category, p.owner_id " +
             "from pets p where p.owner_id = :ownerId")
-    List<Pet> getPets(Long ownerId);
+    List<Pet> getPetsByUser(Long ownerId);
 }

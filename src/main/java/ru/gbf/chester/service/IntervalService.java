@@ -16,11 +16,15 @@ public class IntervalService {
         return intervalRepository.save(interval);
     }
 
-    public List<Interval> getProcedureIntervals(Long procedure_id) {
-        return intervalRepository.getProcedureIntervals(procedure_id);
+    public List<Interval> getProcedureIntervals(Long procedureId) {
+        return intervalRepository.getProcedureIntervals(procedureId);
     }
 
-    public List<Interval> getGroomerIntervals(Long groomer_id) {
-        return intervalRepository.getGroomerIntervals(groomer_id);
+    public List<Interval> getGroomerIntervals(Long groomerId) {
+        return intervalRepository.getGroomerIntervals(groomerId);
+    }
+
+    public void deleteById(Long id) {
+        intervalRepository.deleteById(id);
     }
 }

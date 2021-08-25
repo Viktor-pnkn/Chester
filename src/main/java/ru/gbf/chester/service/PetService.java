@@ -6,7 +6,6 @@ import ru.gbf.chester.PetRepository;
 import ru.gbf.chester.entity.Pet;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Бизнес-логика. Никакой работы с БД!!! То есть никаких SQL скриптов.
@@ -46,7 +45,7 @@ public class PetService {
         petRepository.deleteById(id);
     }
 
-    public List<Pet> getPets(Long owner_id) {
-        return petRepository.getPets(owner_id);
+    public List<Pet> getPetsByUser(Long owner_id) {
+        return petRepository.getPetsByUser(owner_id);
     }
 }

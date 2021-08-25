@@ -18,13 +18,13 @@ insert into users(type, name, email, phone)
 VALUES ('C', 'Гордейчик Артем', 'triplelox@gmail.ru', '+7(916)423-99-11');
 
 insert into pets(name, breed, age, category, owner_id)
-VALUES ('Пати', 'Вельш-корги пемброк', 1, 2, 1);
+VALUES ('Пати', 'Вельш-корги пемброк', 1, 2, 5);
 insert into pets(name, breed, age, category, owner_id)
-VALUES ('Максик', 'Лабрадор', 7, 3, 2);
+VALUES ('Максик', 'Лабрадор', 7, 3, 6);
 insert into pets(name, breed, age, category, owner_id)
-VALUES ('Роза', 'Йоркширский терьер', 9, 1, 2);
+VALUES ('Роза', 'Йоркширский терьер', 9, 1, 6);
 insert into pets(name, breed, age, category, owner_id)
-VALUES ('Атос', 'Русский той-терьер', 3, 1, 3);
+VALUES ('Атос', 'Русский той-терьер', 3, 1, 7);
 
 insert into procedures(name, price)
 VALUES ('Вычесывание', 500);

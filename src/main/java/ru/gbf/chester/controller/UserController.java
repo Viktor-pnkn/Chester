@@ -27,13 +27,8 @@ public class UserController {
         return userMapper.toDTO(userService.create(userMapper.toEntity(user)));
     }
 
-    @GetMapping("/getPets")
-    public List<PetDTO> getPets(@RequestParam("id") Long id) {
-        return userService.getPets(id);
-    }
-
-    @GetMapping("/getGroomerIntervals")
-    public List<IntervalDTO> getGroomerIntervals(@RequestParam("id") Long id) {
-        return userService.getGroomerIntervals(id);
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        userService.deleteById(id);
     }
 }

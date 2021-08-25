@@ -45,6 +45,13 @@ public class PetController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/getPetsByUser")
+    public List<PetDTO> getPetsByUser(@RequestParam("id") Long id) {
+        return petService.getPetsByUser(id).stream()
+                .map(petMapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
     @PostMapping
     public PetDTO save(@RequestBody PetDTO pet) {
         return petMapper.toDTO(petService.create(petMapper.toEntity(pet)));
