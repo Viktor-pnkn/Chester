@@ -24,7 +24,14 @@ public class IntervalService {
         return intervalRepository.getGroomerIntervals(groomerId);
     }
 
+    public List<Interval> getGroomerFreeIntervalsByDate(Long groomerId, String date) {
+        List<Interval> busy = intervalRepository.getGroomerFreeIntervalsByDate(groomerId, date);
+        return Interval.getFree(busy, date);
+    }
+
     public void deleteById(Long id) {
         intervalRepository.deleteById(id);
     }
+
+
 }

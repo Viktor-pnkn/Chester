@@ -49,3 +49,6 @@ insert into intervals(start_time, end_time, groomer_id, procedure_id)
 VALUES ('2021-08-22T10:30', '2021-08-22T11:30', 3, 4);
 insert into intervals(start_time, end_time, groomer_id, procedure_id)
 VALUES ('2021-08-22T15:00', '2021-08-22T16:00', 1, 7);
+
+insert into intervals(start_time, end_time, groomer_id, procedure_id)
+VALUES ('2021-08-27T10:30', '2021-08-27T11:00', 1, 2);

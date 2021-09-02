@@ -1,11 +1,13 @@
 package ru.gbf.chester.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import ru.gbf.chester.dto.IntervalDTO;
 import ru.gbf.chester.mapper.IntervalMapper;
 import ru.gbf.chester.service.IntervalService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,6 +26,14 @@ public class IntervalController {
     @GetMapping("/getGroomerIntervals")
     public List<IntervalDTO> getGroomerIntervals(@RequestParam("id") Long id) {
         return intervalService.getGroomerIntervals(id).stream()
+                .map(intervalMapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/getGroomerFreeIntervalsByDate")
+    public List<IntervalDTO> getGroomerFreeIntervalsByDate(@RequestParam("id") Long id,
+                                                           @RequestParam("date") String date) {
+        return intervalService.getGroomerFreeIntervalsByDate(id, date).stream()
                 .map(intervalMapper::toDTO)
                 .collect(Collectors.toList());
     }
