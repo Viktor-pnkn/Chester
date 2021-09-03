@@ -24,20 +24,7 @@ public class Interval {
     private Long procedureId;
 
 
-    public static List<Interval> getFree(List<Interval> busy, String date) {
-        List<Interval> free = fillFree(date);
-        for (Interval interval : busy) {
-            if (interval.getEndTime().getHour() - interval.getStartTime().getHour() == 1) {
-                Interval i1 = new Interval(0L, interval.getStartTime(), interval.getStartTime().plusMinutes(30), 0L, 0L);
-                Interval i2 = new Interval(0L, interval.getStartTime().plusMinutes(30), interval.getEndTime(), 0L, 0L);
-                free.remove(i1);
-                free.remove(i2);
-            } else {
-                free.remove(interval);
-            }
-        }
-        return free;
-    }
+
 
 
     @Override
@@ -53,20 +40,5 @@ public class Interval {
         return Objects.hash(startTime, endTime);
     }
 
-    public static List<Interval> fillFree(String date) {
-        List<Interval> free = new ArrayList<>();
-        String[] strings = date.split("-");
-        LocalDateTime dateTime = LocalDateTime.of(LocalDate.of(Integer.parseInt(strings[2]), Integer.parseInt(strings[1]), Integer.parseInt(strings[0])), LocalTime.of(10, 0));
-        for (int i = 0; i < 24; i++) {
-            free.add(new Interval (0L, dateTime, dateTime.plusMinutes(30), 0L, 0L));
-            dateTime = dateTime.plusMinutes(30);
-        }
-        /*dateTime = LocalDateTime.of(LocalDate.of(Integer.parseInt(strings[2]), Integer.parseInt(strings[1]), Integer.parseInt(strings[0])), LocalTime.of(10, 0) );
-        for (int i = 0; i < 12; i++) {
-            free.add(new Interval(0L, dateTime, dateTime.plusHours(1), 0L, 0L));
-            dateTime = dateTime.plusHours(1);
-        }*/
 
-        return free;
-    }
 }

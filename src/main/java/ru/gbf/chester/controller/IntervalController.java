@@ -7,6 +7,7 @@ import ru.gbf.chester.dto.IntervalDTO;
 import ru.gbf.chester.mapper.IntervalMapper;
 import ru.gbf.chester.service.IntervalService;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,9 +31,10 @@ public class IntervalController {
                 .collect(Collectors.toList());
     }
 
+    // подавать дату в формате yyyy-mm-dd
     @GetMapping("/getGroomerFreeIntervalsByDate")
     public List<IntervalDTO> getGroomerFreeIntervalsByDate(@RequestParam("id") Long id,
-                                                           @RequestParam("date") String date) {
+                                                           @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return intervalService.getGroomerFreeIntervalsByDate(id, date).stream()
                 .map(intervalMapper::toDTO)
                 .collect(Collectors.toList());
