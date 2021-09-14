@@ -20,4 +20,6 @@ public class Pet {
     private Long category;
 
     private Long ownerId;
+
+
 }

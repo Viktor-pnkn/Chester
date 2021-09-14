@@ -1,8 +1,11 @@
 package ru.gbf.chester.mapper;
 
 import org.springframework.stereotype.Component;
+import ru.gbf.chester.dto.PetDTO;
 import ru.gbf.chester.dto.UserDTO;
 import ru.gbf.chester.entity.User;
+
+import java.util.Set;
 
 @Component
 public class UserMapper {
@@ -13,7 +16,8 @@ public class UserMapper {
                 userDTO.getName(),
                 userDTO.getEmail(),
                 userDTO.getPhone(),
-                userDTO.getSalonId()
+                userDTO.getSalonId(),
+                null
         );
     }
 
