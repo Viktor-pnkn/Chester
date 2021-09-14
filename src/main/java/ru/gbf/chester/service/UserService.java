@@ -30,4 +30,10 @@ public class UserService {
     public void deleteById(Long id) {
         userRepository.deleteById(id);
     }
+
+    public User getById(Long id) {
+        return userRepository.findById(id).orElseThrow(
+                ()-> new RuntimeException("Tакого владельца нет")
+        );
+    }
 }
